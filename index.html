@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Personal site and portfolio of Your Name: projects, experience, and contact." />
+  <meta property="og:title" content="Your Name — Portfolio" />
+  <meta property="og:description" content="Personal site and portfolio of Your Name." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Your+Name" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0e14;
+      --text: #e6edf3;
+      --muted: #9aa7b2;
+      --card: #111625;
+      --accent: #7c5cff;
+      --accent-2: #00d1b2;
+      --border: #1f2637;
+      --shadow: 0 10px 30px rgba(0,0,0,.45);
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#ffffff; --text:#0b0e14; --muted:#5b6875; --card:#f7f8fb; --border:#e7e9ee; }
+      body{ background-image: radial-gradient(600px 200px at 10% 0%, #eef0ff 0%, transparent 70%),
+                                  radial-gradient(500px 180px at 90% 0%, #e2fff7 0%, transparent 70%);
+      }
+    }
+    *{ box-sizing: border-box }
+    html,body{ height:100% }
+    body{
+      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text); background:var(--bg);
+      background-image: radial-gradient(800px 300px at 20% -10%, #1a1f33 0%, transparent 70%),
+                        radial-gradient(700px 260px at 90% -20%, #10251f 0%, transparent 70%);
+    }
+    a{ color:inherit }
+    .container{ max-width:1000px; margin:0 auto; padding:28px 20px 80px }
+
+    /* Header */
+    header{ display:flex; align-items:center; justify-content:space-between; gap:16px; position:sticky; top:0; background:linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,0)); padding-top:8px; backdrop-filter:saturate(1.2) blur(8px) }
+    .brand{ display:flex; align-items:center; gap:12px; text-decoration:none }
+    .avatar{ width:42px; height:42px; border-radius:50%; border:2px solid var(--border); object-fit:cover; box-shadow:var(--shadow) }
+    .name{ font-weight:800; letter-spacing:.3px }
+    nav a{ text-decoration:none; padding:10px 14px; border:1px solid transparent; border-radius:999px }
+    nav a:hover{ border-color:var(--border) }
+
+    /* Hero */
+    .hero{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap:28px; align-items:center; padding:64px 0 24px }
+    .hero h1{ font-size:clamp(32px, 6vw, 56px); line-height:1.04; margin:0 0 14px }
+    .hero p{ color:var(--muted); font-size:clamp(16px, 2.5vw, 20px); margin:0 0 24px }
+    .badges{ display:flex; gap:10px; flex-wrap:wrap }
+    .badge{ border:1px solid var(--border); background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)); padding:10px 14px; border-radius:999px; font-size:14px }
+    .cta{ display:flex; gap:12px; margin-top:18px }
+    .button{ padding:12px 18px; border-radius:12px; text-decoration:none; font-weight:600; border:1px solid var(--border); box-shadow:var(--shadow) }
+    .button.primary{ background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:white; border:none }
+    .button.secondary:hover{ border-color:var(--accent) }
+
+    .card{ background:var(--card); border:1px solid var(--border); border-radius:20px; padding:20px; box-shadow:var(--shadow) }
+
+    /* Sections */
+    section{ margin-top:36px }
+    section h2{ font-size:clamp(22px, 2.8vw, 28px); margin:0 0 14px }
+    .grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap:16px }
+    .col-6{ grid-column: span 6 }
+    .col-12{ grid-column: span 12 }
+
+    /* Project cards */
+    .project{ display:flex; flex-direction:column; gap:10px }
+    .pill{ font-size:12px; border:1px solid var(--border); padding:6px 10px; border-radius:999px; color:var(--muted); width:max-content }
+    .project h3{ margin:4px 0 6px; font-size:18px }
+    .project p{ margin:0; color:var(--muted); line-height:1.5 }
+    .project .links{ display:flex; gap:10px; margin-top:8px }
+
+    /* Footer */
+    footer{ margin-top:64px; padding-top:16px; border-top:1px dashed var(--border); color:var(--muted); font-size:14px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px }
+
+    /* Responsive */
+    @media (max-width: 880px){
+      .hero{ grid-template-columns: 1fr; }
+      .col-6{ grid-column: span 12 }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="#">
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Your avatar" />
+        <div class="name">Your Name</div>
+      </a>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero card">
+      <div>
+        <h1>Hi, I’m <span style="background:linear-gradient(135deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent">Your Name</span>.</h1>
+        <p>One line about what you do — e.g., “Software engineer focused on delightful developer tools and human‑centered design.”</p>
+        <div class="badges">
+          <span class="badge">JavaScript</span>
+          <span class="badge">Python</span>
+          <span class="badge">Open Source</span>
+          <span class="badge">UI/UX</span>
+        </div>
+        <div class="cta">
+          <a class="button primary" href="#contact">Get in touch</a>
+          <a class="button secondary" href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=1200&auto=format&fit=crop" alt="Decorative banner" style="width:100%; border-radius:16px; border:1px solid var(--border)" />
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <div class="grid">
+        <article class="project card col-6">
+          <span class="pill">2025 • Web App</span>
+          <h3>Project One</h3>
+          <p>One or two sentences explaining what this project is, your role, and what makes it cool or useful.</p>
+          <div class="links">
+            <a class="button secondary" href="#" target="_blank" rel="noopener">Live</a>
+            <a class="button secondary" href="#" target="_blank" rel="noopener">Source</a>
+          </div>
+        </article>
+        <article class="project card col-6">
+          <span class="pill">2024 • Library</span>
+          <h3>Project Two</h3>
+          <p>A short description highlighting the problem, your approach, and outcomes (numbers are great!).</p>
+          <div class="links">
+            <a class="button secondary" href="#" target="_blank" rel="noopener">Docs</a>
+            <a class="button secondary" href="#" target="_blank" rel="noopener">Source</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="card">
+        <p>Write a brief bio in 3–5 sentences. Mention what you’re great at, what you enjoy building, and what you’re looking for. Sprinkle in a bit of personality.</p>
+        <p><strong>Currently:</strong> Title @ Company • <strong>Previously:</strong> Another Role • <strong>Education:</strong> Your School</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Best way to reach me: <a href="mailto:you@example.com">you@example.com</a></p>
+        <p>Also on <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://twitter.com/yourusername" target="_blank" rel="noopener">X</a>.</p>
+      </div>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> Your Name.</span>
+      <span>Built with <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>.</span>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
