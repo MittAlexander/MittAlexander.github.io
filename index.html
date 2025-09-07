@@ -8,7 +8,7 @@
   <meta property="og:title" content="Alexander Mittauer — Portfolio" />
   <meta property="og:description" content="Personal site and portfolio of Alexander Mittauer." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0374/7620/4679/files/mary_bowman_sumi_bamboo_73fb8d0d-fe0e-414b-9d19-6cda578bc3b3_480x480.png?v=1695407776" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Your+Name" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -25,15 +25,12 @@
     }
     @media (prefers-color-scheme: light){
       :root{ --bg:#f4efe6; --text:#1a150f; --muted:#6f6556; --card:#fffdf8; --border:#e6ddcc }
-      body{
-      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color:var(--text); background:var(--bg);
-      background-image:
-        radial-gradient(900px 340px at 20% -10%, rgba(96, 78, 50, 0.6) 0%, transparent 70%),
-        radial-gradient(800px 300px at 95% -20%, rgba(58, 71, 52, 0.5) 0%, transparent 70%),
-        repeating-linear-gradient(90deg, rgba(255,255,255,.02) 0 2px, rgba(0,0,0,.02) 2px 4px);
-      background-blend-mode: multiply, multiply, normal;
-    }
+      /* CHANGED → removed cool hues in light mode too */
+      body{ background-image:
+        radial-gradient(800px 300px at 15% -10%, rgba(177,150,115,0.4) 0%, transparent 70%),
+        radial-gradient(700px 260px at 100% -20%, rgba(140,153,128,0.35) 0%, transparent 70%),
+        repeating-linear-gradient(90deg, rgba(0,0,0,.015) 0 2px, rgba(0,0,0,0) 2px 4px);
+          }
     }
     @media (prefers-color-scheme: light){
       :root{ --bg:#ffffff; --text:#0b0e14; --muted:#5b6875; --card:#f7f8fb; --border:#e7e9ee; }
