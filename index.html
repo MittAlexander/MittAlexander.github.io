@@ -14,14 +14,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg: #0b0e14;
-      --text: #e6edf3;
-      --muted: #9aa7b2;
-      --card: #111625;
-      --accent: #7c5cff;
-      --accent-2: #00d1b2;
-      --border: #1f2637;
+      --bg: #0f0d0a;        /* inked bark */
+      --text: #eae3d6;      /* warm paper */
+      --muted: #b8ad99;     /* tea-stained */
+      --card: #17130f;      /* deep umber */
+      --accent: #8b5e34;    /* burnt sienna */
+      --accent-2: #3d5a40;  /* pine green */
+      --border: #2a241b;    /* dark fiber */
       --shadow: 0 10px 30px rgba(0,0,0,.45);
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f4efe6; --text:#1a150f; --muted:#6f6556; --card:#fffdf8; --border:#e6ddcc }
+      body{
+      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text); background:var(--bg);
+      background-image:
+        radial-gradient(900px 340px at 20% -10%, rgba(54,46,34,.7) 0%, transparent 70%),
+        radial-gradient(800px 300px at 95% -20%, rgba(32,48,40,.6) 0%, transparent 70%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.02) 0 2px, rgba(0,0,0,.02) 2px 4px);
+      background-blend-mode: multiply, multiply, normal;
+    }
     }
     @media (prefers-color-scheme: light){
       :root{ --bg:#ffffff; --text:#0b0e14; --muted:#5b6875; --card:#f7f8fb; --border:#e7e9ee; }
@@ -50,10 +62,10 @@
 
     /* Hero */
     .hero{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap:28px; align-items:center; padding:64px 0 24px }
-    .hero h1{ font-size:clamp(32px, 6vw, 56px); line-height:1.04; margin:0 0 14px }
+    .hero h1{ font-family: 'Noto Serif JP', Inter, serif; font-weight:700; font-size:clamp(32px, 6vw, 56px); line-height:1.04; margin:0 0 14px }
     .hero p{ color:var(--muted); font-size:clamp(16px, 2.5vw, 20px); margin:0 0 24px }
     .badges{ display:flex; gap:10px; flex-wrap:wrap }
-    .badge{ border:1px solid var(--border); background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)); padding:10px 14px; border-radius:999px; font-size:14px }
+    .badge{ border:1px solid var(--border); background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)); padding:10px 14px; border-radius:999px; font-size:14px; color:var(--muted) }
     .cta{ display:flex; gap:12px; margin-top:18px }
     .button{ padding:12px 18px; border-radius:12px; text-decoration:none; font-weight:600; border:1px solid var(--border); box-shadow:var(--shadow) }
     .button.primary{ background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:white; border:none }
@@ -63,7 +75,7 @@
 
     /* Sections */
     section{ margin-top:36px }
-    section h2{ font-size:clamp(22px, 2.8vw, 28px); margin:0 0 14px }
+    section h2{ font-family: 'Noto Serif JP', Inter, serif; font-weight:700; font-size:clamp(22px, 2.8vw, 28px); margin:0 0 14px }
     .grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap:16px }
     .col-6{ grid-column: span 6 }
     .col-12{ grid-column: span 12 }
